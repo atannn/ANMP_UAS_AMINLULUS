@@ -1,0 +1,63 @@
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2C2C2C" />
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:backgroundTint="#B0BEC5"
+        android:layout_marginTop="24dp" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:backgroundTint="#B0BEC5"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#90CAF9"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnToSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign Up"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#ECEFF1"
+        android:textColor="#37474F" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="232dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="Logo"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/logo" />
+</LinearLayout>

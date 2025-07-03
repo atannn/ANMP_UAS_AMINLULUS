@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/expensesFragment">
+
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="com.example.pocketflow.view.ExpensesFragment"
+        android:label="ExpensesFragment"
+        tools:layout="@layout/fragment_expenses">
+        <action
+            android:id="@+id/action_to_addExpenses"
+            app:destination="@id/addExpensesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.example.pocketflow.view.BudgetFragment"
+        android:label="BudgetFragment"
+        tools:layout="@layout/fragment_budget">
+        <action
+            android:id="@+id/action_to_addBudget"
+            app:destination="@id/addBudgetFragment" />
+        <action
+            android:id="@+id/action_to_editBudget"
+            app:destination="@id/editBudgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.example.pocketflow.view.ReportFragment"
+        android:label="ReportFragment"
+        tools:layout="@layout/fragment_report"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.pocketflow.view.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/addBudgetFragment"
+        android:name="com.example.pocketflow.view.AddBudgetFragment"
+        android:label="AddBudgetFragment"
+        tools:layout="@layout/fragment_add_budget"/>
+    <fragment
+        android:id="@+id/editBudgetFragment"
+        android:name="com.example.pocketflow.view.EditBudgetFragment"
+        android:label="EditBudgetFragment"
+        tools:layout="@layout/fragment_add_budget">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/addExpensesFragment"
+        android:name="com.example.pocketflow.view.AddExpensesFragment"
+        android:label="AddExpensesFragment"
+        tools:layout="@layout/fragment_add_expenses"/>
+</navigation>

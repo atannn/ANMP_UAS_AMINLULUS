@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp"
+    android:background="@drawable/bg_dialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/tvDialogDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#565656"
+        android:textSize="15sp"
+        android:text="04 Juni 2025" />
+
+    <TextView
+        android:id="@+id/tvDialogDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Deskripsi Pengeluaran" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipBudgetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Makanan"
+        app:chipBackgroundColor="@color/chip_bg_color"
+        app:chipCornerRadius="16dp"
+        app:chipStrokeColor="@android:color/transparent"
+        app:chipStrokeWidth="0dp"
+        app:closeIconEnabled="false"
+        android:textColor="@color/chip_text_color"
+        style="@style/Widget.MaterialComponents.Chip.Entry" />
+
+    <TextView
+        android:id="@+id/tvDialogAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="Rp1.000.000"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnCloseDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tutup" />
+    </LinearLayout>
+
+</LinearLayout>

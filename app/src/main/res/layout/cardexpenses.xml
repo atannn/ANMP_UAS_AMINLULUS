@@ -1,0 +1,57 @@
+<!-- item_card_expense.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/selectedExpneses"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp"
+    card_view:cardBackgroundColor="#ECEFF1"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginBottom="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Tanggal -->
+        <TextView
+            android:id="@+id/tvExpenseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01 Jun 2025"
+            android:textSize="12sp"
+            android:textColor="#757575" />
+
+        <!-- Chip nama budget -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBudgetName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvExpenseDate"
+            android:layout_marginTop="4dp"
+            android:text="Makanan"
+            app:chipBackgroundColor="@color/chip_bg_color"
+            app:chipCornerRadius="16dp"
+            app:chipStrokeColor="@android:color/transparent"
+            app:chipStrokeWidth="0dp"
+            app:closeIconEnabled="false"
+            android:textColor="@color/chip_text_color"
+            style="@style/Widget.MaterialComponents.Chip.Entry" />
+
+        <!-- Nominal -->
+        <TextView
+            android:id="@+id/tvExpenseAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IDR 25.000"
+            android:textSize="16sp"
+            android:textColor="#37474F"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

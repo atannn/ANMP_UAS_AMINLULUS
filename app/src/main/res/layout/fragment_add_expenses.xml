@@ -1,0 +1,156 @@
+<!-- fragment_add_expense.xml -->
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Judul -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Expenses"
+            android:textSize="20sp"
+            android:textColor="#1565C0"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Input Tanggal -->
+        <EditText
+            android:id="@+id/etExpenseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:focusable="false"
+            android:backgroundTint="#90CAF9"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="choose budget"
+            android:textSize="15dp"/>
+        <Spinner
+            android:id="@+id/spinnerBudget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Info Budget dan Progress -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp"
+            android:gravity="fill_horizontal">
+
+            <TextView
+                android:id="@+id/tvRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remaining: IDR 100.000"
+                android:textSize="14sp"
+                android:textColor="#455A64" />
+
+            <TextView
+                android:id="@+id/tvTotalBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: IDR 200.000"
+                android:textSize="14sp"
+                android:textColor="#455A64" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pbBudget"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:progressTint="#64B5F6"
+            android:progress="50"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Input Nominal (seperti Add Budget) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_input_blue_border"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IDR"
+                android:textColor="#1565C0"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <EditText
+                android:id="@+id/etExpenseAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:background="@android:color/transparent"
+                android:textColor="#263238"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/etExpenseDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description (optional)"
+            android:backgroundTint="#B0BEC5"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/btnSubmitExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Expense"
+            android:backgroundTint="#64B5F6"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cancel"
+            android:backgroundTint="#A6A6A6"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="Logo"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logoonly"
+            android:alpha="0.5"/>
+    </LinearLayout>
+</ScrollView>

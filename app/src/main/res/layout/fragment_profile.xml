@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pocketflow.viewmodel.UserViewModel" />
+    </data>
+    <!-- fragment_profile.xml -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        android:padding="16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#37474F"
+                android:layout_marginBottom="16dp" />
+
+            <!-- First Name -->
+            <TextView
+                android:id="@+id/tvFirstNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Last Name -->
+            <TextView
+                android:id="@+id/tvLastNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doe"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp" />
+
+
+            <!-- Old Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Old Password"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etOldPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:hint="Enter old password"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#B0BEC5"
+                android:layout_marginBottom="12dp"
+                android:text="@={viewModel.oldPassword}"/>
+
+            <!-- New Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Password"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:hint="Enter new password"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#B0BEC5"
+                android:layout_marginBottom="12dp"
+                android:text="@={viewModel.newPassword}"/>
+
+            <!-- Repeat Password -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat Password"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+            <EditText
+                android:id="@+id/etRepeatPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:hint="Repeat new password"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#B0BEC5"
+                android:layout_marginBottom="20dp"
+                android:text="@={viewModel.repeatPassword}"/>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="8dp"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#78909C"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{() -> viewModel.logOut()}"/>
+
+                <Button
+                    android:id="@+id/btnChangePassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Change Password"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#64B5F6"
+                    android:onClick="@{() -> viewModel.changePass()}"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
