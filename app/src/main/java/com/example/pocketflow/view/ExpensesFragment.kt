@@ -48,9 +48,11 @@ class ExpensesFragment : Fragment() {
 
         expensesViewModel.getAllExpenses(idUser)
 
+        //setup recycle view (vertical) dan menghubungkan adapter
         binding.recExpenses.layoutManager = LinearLayoutManager(context)
         binding.recExpenses.adapter = expensesListAdapter
 
+        //navigasi ke addexpenses
         binding.btnAddExpense.setOnClickListener {
             val action = ExpensesFragmentDirections.actionToAddExpenses()
             Navigation.findNavController(it).navigate(action)
@@ -58,6 +60,7 @@ class ExpensesFragment : Fragment() {
         observeViewModel()
     }
 
+    //kalo ada data, rcview ditampilkan, jika tidak disembunyikan
     fun observeViewModel() {
         expensesViewModel.dataExpenses.observe(viewLifecycleOwner, Observer {
             expensesListAdapter.updateListBudget(it)

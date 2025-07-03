@@ -9,27 +9,23 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.example.pocketflow.R
 import com.example.pocketflow.databinding.FragmentSignUpBinding
 import com.example.pocketflow.model.User
 import com.example.pocketflow.viewmodel.UserViewModel
 
-
 class SignUpFragment : Fragment() {
-    private lateinit var binding : FragmentSignUpBinding
+    private lateinit var binding: FragmentSignUpBinding
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
+        // No arguments needed at the moment
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -44,9 +40,15 @@ class SignUpFragment : Fragment() {
             val lname = binding.txtLastname.text.toString()
             val username = binding.txtUsername.text.toString()
             val password = binding.txtPassword.text.toString()
+            val repeatPassword = binding.txtRepeatPassword.text.toString()
 
-            if (fname.isBlank() || lname.isBlank() || username.isBlank() || password.isBlank()) {
-                Toast.makeText(requireContext(), "Please Fill All The Blank", Toast.LENGTH_SHORT).show()
+            if (fname.isBlank() || lname.isBlank() || username.isBlank() || password.isBlank() || repeatPassword.isBlank()) {
+                Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (password != repeatPassword) {
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -59,6 +61,7 @@ class SignUpFragment : Fragment() {
 
             userViewModel.registerUser(user)
         }
+
         binding.btnToSignIn.setOnClickListener {
             val action = SignUpFragmentDirections.actionToSignInFragment()
             Navigation.findNavController(it).navigate(action)
@@ -78,12 +81,11 @@ class SignUpFragment : Fragment() {
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             SignUpFragment().apply {
                 arguments = Bundle().apply {
-
+                    // optional parameters if needed
                 }
             }
     }

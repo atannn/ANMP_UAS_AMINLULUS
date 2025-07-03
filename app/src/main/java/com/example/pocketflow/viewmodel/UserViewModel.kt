@@ -96,7 +96,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application), C
             }
 
             daoUser.changePassword(newPassword.value.toString(), user.id)
-            resultChangePass.postValue("Password updated successfully") // gunakan postValue
+                resultChangePass.postValue("Password updated successfully") // gunakan postValue
             popUpMessage("Password updated successfully")
             clearText()
         }

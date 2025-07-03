@@ -33,7 +33,6 @@ class BudgetAdapter(val listBudget:ArrayList<Budget>)
         }
     }
 
-
     fun updateListBudget(newTodoList: List<Budget>) {
         listBudget.clear()
         listBudget.addAll(newTodoList)
